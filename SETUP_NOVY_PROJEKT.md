@@ -7,8 +7,8 @@
 ## 🚀 Co uděláš ihned po přečtení tohoto souboru
 
 1. **Pozdrav uživatele** krátce a vesele. Řekni mu, že máš v rukou setup a začneš ho vést.
-2. **Zeptej se na jednu věc:** *„Jak se má nový projekt jmenovat?"* Z odpovědi vyrobíš název složky (lowercase, pomlčky místo mezer, žádná diakritika — např. „TV pořad o AI" → `tv-porad-ai/`).
-3. **Vyrob ve vybrané Cowork složce podsložku** s tímto názvem (např. `tv-porad-ai/`). Od této chvíle je to *projektová složka* — všechno jde do ní.
+2. **Zeptej se na jednu věc:** *„Jak se má nový projekt jmenovat?"* Z odpovědi vyrobíš název složky (lowercase, pomlčky místo mezer, žádná diakritika — např. „Aplikace pro hledání zdrojů" → `aplikace-zdroje/`, nebo „Rekonstrukce bytu" → `rekonstrukce-bytu/`).
+3. **Vyrob ve vybrané Cowork složce podsložku** s tímto názvem. Od této chvíle je to *projektová složka* — všechno jde do ní.
 4. **Vyrob v projektové složce soubor `CLAUDE.md`** podle šablony níže (viz sekce *Šablona CLAUDE.md*).
 5. **Krátce shrň uživateli, co teď budete dělat** — 5 kroků, začínáte krokem 1 (brainstorming nápadu).
 6. **Začni Krok 1.** Nečekej. Zeptej se na první otázku: *„Pro koho ten projekt vlastně je? Komu má sloužit?"*
@@ -22,7 +22,7 @@ Drž se tohohle striktně. Bez výjimek.
 | Typ obsahu               | Soubor                                          | Verzování                       |
 |--------------------------|-------------------------------------------------|---------------------------------|
 | Nápad                    | `idea1.md`, `idea2.md`, `idea3.md`…             | Číslo za názvem                 |
-| Tvoje know-how           | `know-how1.md`, `know-how2.md`…                 | Číslo za názvem                 |
+| Tvoje know-how           | `know-how.md`                                   | Jeden soubor, průběžně aktualizuj |
 | Otázky pro někoho dalšího| `questions-1.md`, `questions-2.md`…             | Pomlčka + číslo kola            |
 | Odpovědi zpátky          | `answers-1.md`, `answers-2.md`…                 | Stejné číslo jako otázky        |
 | Cizí know-how / nápady   | `external-know-how.md`, `external-ideas.md`     | Jeden soubor, doplňuj           |
@@ -38,11 +38,11 @@ Drž se tohohle striktně. Bez výjimek.
 Takhle bude vypadat plně dokončený projekt:
 
 ```
-tv-porad-ai/
-├── CLAUDE.md                      ← řídicí soubor, aktualizuješ průběžně
+muj-projekt/
+├── CLAUDE.md                      ← řídicí soubor, aktualizuješ průběžně (automatické)
 ├── idea1.md                       ← první verze nápadu
 ├── idea2.md                       ← (volitelně, když se nápad vyvine)
-├── know-how1.md                   ← znalosti uživatele
+├── know-how.md                    ← znalosti uživatele (jeden soubor, doplňuješ)
 ├── external-know-how.md           ← poznatky od cizích lidí
 ├── external-ideas.md              ← cizí nápady (volitelně)
 ├── questions-1.md                 ← první kolo otázek pro spoluautora
@@ -53,7 +53,8 @@ tv-porad-ai/
 │   ├── koncept-1.md
 │   └── koncept-2.md
 └── specifikace/
-    └── specifikace1.md
+    ├── specifikace1.md
+    └── specifikace2.md
 ```
 
 Postupně to plníš podle toho, kde uživatel právě je.
@@ -79,7 +80,7 @@ Vytvoř tento soubor v projektové složce **ihned** po pojmenování projektu. 
 
 ## Workflow (5 kroků)
 1. **Idea** → `idea1.md`, `idea2.md`…  ⬅️ právě tady
-2. **Know-how** → `know-how1.md`
+2. **Know-how** → `know-how.md`
 3. **Ping-pong s externími lidmi** → `questions-N.md` / `answers-N.md` / `external-know-how.md`
 4. **První kompilace** → `01-prvni-kompilace/koncept-N.md`
 5. **Specifikace** → `specifikace/specifikaceN.md`
@@ -89,7 +90,7 @@ Vytvoř tento soubor v projektové složce **ihned** po pojmenování projektu. 
 - Vyptávám se **jedna otázka po druhé**. Nikdy stěna textu.
 - Brainstorming končí, až má uživatel pocit „tohle je ono". Pak teprve vyrobím MD.
 - Verzuju číslováním (idea1, idea2…), starou verzi neničím.
-- Tvoje znalosti drž odděleně od cizích (`know-how1.md` vs `external-know-how.md`).
+- Tvoje znalosti drž odděleně od cizích (`know-how.md` vs `external-know-how.md`).
 - Když uživatel chce posílat otázky někomu dalšímu, vyrábím `questions-N.md` **bez celého know-how** — jen kontext + otázky.
 
 ## Klíčové otázky pro každý krok
@@ -154,13 +155,13 @@ Vytvoř tento soubor v projektové složce **ihned** po pojmenování projektu. 
 
 ### Krok 2 — Know-how
 
-**Cíl:** vyrobit `know-how1.md`.
+**Cíl:** vyrobit `know-how.md`.
 
 **Postup:**
 1. Vysvětli uživateli, co je know-how (jeho znalosti, frameworky, červené čáry, kontakty, čísla, co NEdělat).
 2. Vyptávej se podle sekce *Klíčové otázky → Krok 2*.
 3. Pokud uživatel řekne, že o něčem neví, neztrácej čas, jdi dál.
-4. Vyrob `know-how1.md`. Strukturuj jasně (oblasti, frameworky, červené čáry).
+4. Vyrob `know-how.md`. Strukturuj jasně (oblasti, frameworky, červené čáry). **Jeden soubor — když se objeví nové znalosti, doplň je sem**, neverzuj.
 5. Aktualizuj `CLAUDE.md`.
 
 ### Krok 3 — Ping-pong s externími lidmi
@@ -175,7 +176,7 @@ Vytvoř tento soubor v projektové složce **ihned** po pojmenování projektu. 
    - 5–10 konkrétních otázek pro tu osobu.
 4. Řekni uživateli, ať to pošle, a počkej, až dostane odpověď.
 5. Až uživatel dorazí s odpovědí, požádej ho, ať ti přiloží `answers-N.md` (nebo text — pak ti ho vyrobíš). Z odpovědí extrahuj klíčové poznatky do `external-know-how.md` (nebo do něj přidej, pokud už existuje).
-6. **Nikdy** nelepi cizí poznatky do `know-how1.md` uživatele.
+6. **Nikdy** nelepi cizí poznatky do `know-how.md` uživatele.
 7. Aktualizuj `CLAUDE.md`.
 
 ### Krok 4 — První kompilace
@@ -184,7 +185,7 @@ Vytvoř tento soubor v projektové složce **ihned** po pojmenování projektu. 
 
 **Postup:**
 1. Vyrob podsložku `01-prvni-kompilace/`.
-2. Spoj všechno dohromady: `idea1.md` + `know-how1.md` + `external-know-how.md`.
+2. Spoj všechno dohromady: `idea1.md` + `know-how.md` + `external-know-how.md`.
 3. Vyptávej se na otevřené body z *Klíčové otázky → Krok 4*.
 4. Vyrob `koncept-1.md`. Detailní popis, jak to bude vypadat — formát, struktura, tým, workflow.
 5. Aktualizuj `CLAUDE.md`.
@@ -222,7 +223,7 @@ Tyhle pokyny uživatel může kdykoliv použít. Naveď ho na ně, když se ztra
 - *„Vyrob teď z toho MD."* → vyrobíš příslušný soubor podle aktuálního kroku.
 - *„Posuňme se na další krok."* → uzavřeš aktuální krok, aktualizuješ CLAUDE.md, začneš nový.
 - *„Chci přizvat XY."* → spustíš Krok 3 — vyrobíš questions-N.md.
-- *„Začni novou verzi."* → vyrobíš `idea2.md` (resp. `know-how2.md`…) a původní necháš být.
+- *„Začni novou verzi."* → vyrobíš `idea2.md` (resp. `koncept-2.md`, `specifikace2.md`…) a původní necháš být. Know-how je jeden soubor — ten jen doplníš.
 
 ---
 
