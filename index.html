@@ -1389,11 +1389,14 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
 /* ===== Telefon ===== */
 @media (max-width: 640px) {
   .slide {
-    padding: 22px 14px 80px;
+    padding: 22px 14px calc(140px + env(safe-area-inset-bottom));
     justify-content: flex-start;
     overflow-y: auto;
   }
   .slide .content { margin: 0 auto; }
+
+  /* Schovat dekorativní ↔ — iOS ho renderuje jako modré emoji */
+  .pingpong-divider { display: none !important; }
 
   /* Typo */
   .title-display { font-size: clamp(34px, 9vw, 52px); line-height: 1.05; }
@@ -1519,14 +1522,16 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   .chip { font-size: 11px; padding: 5px 11px; }
   .tag { font-size: 11px; padding: 3px 8px; }
 
-  /* Nav arrows: small + bottom-corners */
+  /* Nav arrows: small + bottom-corners, with safe area */
   .nav-arrow {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 18px;
     top: auto;
-    bottom: 18px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
     transform: none;
+    background: rgba(20, 19, 18, 0.92);
+    border-color: var(--border-strong);
   }
   .nav-arrow.prev { left: 14px; }
   .nav-arrow.next { right: 14px; }
@@ -1536,8 +1541,16 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   /* Floating decorations off */
   .float-icons { display: none; }
 
-  /* Counter + author + kbd hint */
-  .slide-counter { bottom: 26px; font-size: 11px; }
+  /* Counter — pill s pozadím nad navigací, ať se neztrácí v textu */
+  .slide-counter {
+    bottom: calc(30px + env(safe-area-inset-bottom));
+    font-size: 11px;
+    background: rgba(20, 19, 18, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 14px;
+    backdrop-filter: blur(8px);
+  }
   .author-credit { display: none; }
   .kbd-hint { display: none; }
 
@@ -1550,7 +1563,7 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
 
 /* ===== Velmi malá obrazovka (iPhone SE atd.) ===== */
 @media (max-width: 380px) {
-  .slide { padding: 18px 10px 76px; }
+  .slide { padding: 18px 10px calc(130px + env(safe-area-inset-bottom)); }
   .source-grid { grid-template-columns: 1fr; }
   h2.slide-title { font-size: clamp(22px, 6vw, 28px); }
   .title-display { font-size: clamp(30px, 9vw, 44px); }
@@ -2284,7 +2297,7 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
           <span class="when">30. 5.</span>
         </div>
       </div>
-      <div style="display: flex; align-items: center; font-family: 'Fraunces', serif; font-size: 64px; font-style: italic; color: var(--text-faint); font-weight: 300;">↔</div>
+      <div class="pingpong-divider" style="display: flex; align-items: center; font-family: 'Fraunces', serif; font-size: 64px; font-style: italic; color: var(--text-faint); font-weight: 300;">↔</div>
       <div class="versions-stack" style="max-width: 320px;">
         <div class="recap-label">← Jeho odpovědi</div>
         <div class="version-row">
