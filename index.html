@@ -72,6 +72,7 @@ body::before {
   position: relative;
   width: 100vw;
   height: 100vh;
+  height: 100dvh; /* dynamický viewport — bere v potaz auto-hide browser chrome na iOS/Android */
   z-index: 2;
 }
 
@@ -1389,9 +1390,11 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
 /* ===== Telefon ===== */
 @media (max-width: 640px) {
   .slide {
-    padding: 22px 14px calc(140px + env(safe-area-inset-bottom));
+    padding: 22px 14px calc(220px + env(safe-area-inset-bottom));
     justify-content: flex-start;
     overflow-y: auto;
+    overscroll-behavior: contain; /* zabrání rubber-band přenášení na rodiče */
+    -webkit-overflow-scrolling: touch;
   }
   .slide .content { margin: 0 auto; }
 
@@ -1563,7 +1566,7 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
 
 /* ===== Velmi malá obrazovka (iPhone SE atd.) ===== */
 @media (max-width: 380px) {
-  .slide { padding: 18px 10px calc(130px + env(safe-area-inset-bottom)); }
+  .slide { padding: 18px 10px calc(200px + env(safe-area-inset-bottom)); }
   .source-grid { grid-template-columns: 1fr; }
   h2.slide-title { font-size: clamp(22px, 6vw, 28px); }
   .title-display { font-size: clamp(30px, 9vw, 44px); }
