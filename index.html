@@ -1056,6 +1056,62 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   border-color: var(--border-strong);
 }
 
+/* Download button — pro SETUP soubor */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 32px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 100%);
+  color: #1a0f08;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--orange-bright);
+  box-shadow: 0 6px 24px var(--orange-glow), inset 0 1px 0 rgba(255, 220, 180, 0.4);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255, 140, 66, 0.45), inset 0 1px 0 rgba(255, 220, 180, 0.5);
+}
+.download-btn:active {
+  transform: translateY(0);
+}
+.download-btn .dl-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(26, 15, 8, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.download-btn .dl-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+.download-btn .dl-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+.download-btn .dl-sub {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.78;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0;
+  margin-top: 2px;
+}
+
 /* Two-col / compose */
 .two-col {
   display: grid;
@@ -1525,6 +1581,12 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   .chip { font-size: 11px; padding: 5px 11px; }
   .tag { font-size: 11px; padding: 3px 8px; }
 
+  /* Download button na mobilu — full width, kompaktnější */
+  .download-btn { padding: 14px 18px; gap: 12px; font-size: 14px; width: 100%; justify-content: center; max-width: 360px; }
+  .download-btn .dl-icon { width: 28px; height: 28px; font-size: 15px; }
+  .download-btn .dl-title { font-size: 14px; }
+  .download-btn .dl-sub { font-size: 10.5px; }
+
   /* Nav arrows: small + bottom-corners, with safe area */
   .nav-arrow {
     width: 44px;
@@ -1716,7 +1778,7 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
       Stačí ho přiložit Claudeovi v Coworku — on z něj přečte celý workflow, vyrobí si vlastní
       <span class="tag concept">CLAUDE.md</span> a začne tě <strong>krok po kroku vést</strong>. Tobě stačí jen odpovídat.
     </p>
-    <div class="flow-row" style="margin-bottom: 36px;">
+    <div class="flow-row" style="margin-bottom: 28px;">
       <div class="flow-block" style="border-color: var(--border-strong);">
         <div class="label">1 · Přilož</div>
         <div class="desc"><span class="tag idea">SETUP_NOVY_PROJEKT.md</span><br>do chatu</div>
@@ -1732,6 +1794,15 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
         <div class="desc">Sám tě provede<br>všemi 5 kroky</div>
       </div>
     </div>
+
+    <a class="download-btn" href="/SETUP_NOVY_PROJEKT.md" download="SETUP_NOVY_PROJEKT.md">
+      <span class="dl-icon">↓</span>
+      <span class="dl-text">
+        <span class="dl-title">Stáhnout setup soubor</span>
+        <span class="dl-sub">SETUP_NOVY_PROJEKT.md</span>
+      </span>
+    </a>
+
     <div class="hint">
       <span class="lbl">Jak to použít:</span>
       Otevřeš Claude Desktop, zapneš Cowork, vybereš složku. Přetáhneš do chatu
@@ -2697,12 +2768,21 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
       <span class="tag concept">koncept</span>
       až po hotovou <span class="tag spec">specifikaci</span>.
     </p>
-    <div class="spotlight" style="margin: 0 auto;">
+    <div class="spotlight" style="margin: 0 auto 36px;">
       <strong>Tvůj další krok</strong><br>
-      Otevři Claude Desktop, zapni Cowork, vyber si složku, řekni Claudeovi tvůj nápad — a začni.
+      Stáhni si setup soubor, otevři Claude Desktop, zapni Cowork — a začni.
     </div>
-    <div style="margin-top: 48px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-      <div class="chip">📁 Sourcecheck/</div>
+
+    <a class="download-btn" href="/SETUP_NOVY_PROJEKT.md" download="SETUP_NOVY_PROJEKT.md">
+      <span class="dl-icon">↓</span>
+      <span class="dl-text">
+        <span class="dl-title">Stáhnout setup soubor</span>
+        <span class="dl-sub">SETUP_NOVY_PROJEKT.md</span>
+      </span>
+    </a>
+
+    <div style="margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <div class="chip">📁 muj-projekt/</div>
       <div class="chip">idea.md</div>
       <div class="chip">know-how.md</div>
       <div class="chip orange">jedeme</div>
