@@ -1518,25 +1518,47 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   /* Two-col layouts stack */
   .two-col { grid-template-columns: 1fr; gap: 18px; }
 
-  /* Flow row → vertical */
+  /* Flow row → vertical, blocky padding, no flex-grow rozpínání */
   .flow-row {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     align-items: stretch;
+    width: 100%;
   }
-  .flow-block { width: 100%; min-width: 0; padding: 12px 14px; }
-  .flow-block .label { font-size: 14px; }
-  .flow-block .desc { font-size: 12px; }
-  .flow-arrow { transform: rotate(90deg); font-size: 22px; }
+  .flow-block {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 14px 16px;
+    flex: 0 0 auto; /* zabrání svislému roztahování */
+  }
+  .flow-block .label { font-size: 14.5px; }
+  .flow-block .desc { font-size: 12.5px; }
+  .flow-arrow {
+    transform: rotate(90deg);
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    flex: 0 0 auto;
+    margin: -4px 0; /* trochu přitáhne boxy k šipce */
+  }
 
-  /* Compose row → wrap */
+  /* Compose row → svisle, šipka rotovaná */
   .compose-row {
-    flex-wrap: wrap;
-    gap: 8px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 6px;
+    align-items: center;
     justify-content: center;
   }
-  .compose-row .plus, .compose-row .arrow { font-size: 18px; }
-  .compose-row .tag { font-size: 12px; padding: 5px 10px; }
+  .compose-row .plus { font-size: 16px; opacity: 0.6; line-height: 1; }
+  .compose-row .arrow {
+    transform: rotate(90deg);
+    font-size: 20px;
+    margin: 2px 0;
+    line-height: 1;
+  }
+  .compose-row .tag { font-size: 12px; padding: 5px 11px; }
 
   /* Ping-pong → stack */
   .pingpong {
@@ -1682,9 +1704,6 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   .final + div, .final ~ div[style*="margin-top: 40px"] {
     margin-top: 24px !important;
   }
-
-  /* Compose row arrow na mobilu trochu menší */
-  .compose-row .arrow { font-size: 16px !important; }
 
   /* MD body — pre/code wrapping na úzké displeji */
   .md-body { word-break: break-word; overflow-wrap: anywhere; }
