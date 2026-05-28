@@ -1456,8 +1456,7 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
 
 /* ===== Tablet a menší ===== */
 @media (max-width: 900px) {
-  .slide { padding: 36px 24px 70px; justify-content: flex-start; overflow-y: auto; }
-  .slide .content { margin: auto 0; }
+  .slide { padding: 36px 24px 70px; justify-content: safe center; overflow-y: auto; }
 
   /* Multi-column grids → 2 columns max */
   .card-grid.cols-3,
@@ -1482,12 +1481,11 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
 @media (max-width: 640px) {
   .slide {
     padding: 22px 14px calc(220px + env(safe-area-inset-bottom));
-    justify-content: flex-start;
+    justify-content: safe center;
     overflow-y: auto;
     overscroll-behavior: contain; /* zabrání rubber-band přenášení na rodiče */
     -webkit-overflow-scrolling: touch;
   }
-  .slide .content { margin: 0 auto; }
 
   /* Schovat dekorativní ↔ — iOS ho renderuje jako modré emoji */
   .pingpong-divider { display: none !important; }
