@@ -1782,12 +1782,13 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.5);
   }
   .float-icon::before { width: 6px; height: 6px; }
-  .float-icon:nth-child(1) { top: 8%;   left: 6%;   right: auto; }
-  .float-icon:nth-child(2) { top: 18%;  left: auto; right: 4%; }
-  .float-icon:nth-child(3) { top: 30%;  left: 3%;   right: auto; }
-  .float-icon:nth-child(4) { top: 72%;  left: auto; right: 6%; }
-  .float-icon:nth-child(5) { top: 84%;  left: 8%;   right: auto; }
-  .float-icon:nth-child(6) { top: 60%;  left: auto; right: 4%; }
+  /* Striktní 2-zónový layout: 0–25% top, 75–92% bottom, střed čistý pro text */
+  .float-icon:nth-child(1) { top: 5%;   left: 5%;   right: auto; }
+  .float-icon:nth-child(2) { top: 14%;  left: auto; right: 4%; }
+  .float-icon:nth-child(3) { top: 23%;  left: 8%;   right: auto; }
+  .float-icon:nth-child(4) { top: 75%;  left: auto; right: 5%; }
+  .float-icon:nth-child(5) { top: 83%;  left: 6%;   right: auto; }
+  .float-icon:nth-child(6) { top: 91%;  left: auto; right: 14%; }
   /* Menší amplituda floatu, ať nevypadávají z viewportu */
   @keyframes floatUp {
     0%, 100% { transform: translateY(0); }
