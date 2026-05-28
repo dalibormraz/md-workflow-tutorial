@@ -1056,6 +1056,41 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   border-color: var(--border-strong);
 }
 
+/* Author note — osobní úvodní slide */
+.author-note {
+  max-width: 720px;
+  margin: 6px auto 0;
+  text-align: left;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.65;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+.author-note p {
+  margin-bottom: 18px;
+}
+.author-note p:last-child {
+  margin-bottom: 0;
+}
+.author-note strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.author-note em {
+  color: var(--orange);
+  font-style: italic;
+  font-weight: 400;
+}
+.author-signature {
+  margin-top: 32px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
 /* Download button — pro SETUP soubor */
 .download-btn {
   display: inline-flex;
@@ -1587,6 +1622,82 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
   .download-btn .dl-title { font-size: 14px; }
   .download-btn .dl-sub { font-size: 10.5px; }
 
+  /* Author note na mobilu */
+  .author-note { font-size: 14.5px; line-height: 1.6; padding: 0 4px; }
+  .author-note p { margin-bottom: 14px; }
+  .author-signature { font-size: 14px; margin-top: 22px; }
+
+  /* === Specifické fixy pro mobilní zarovnání === */
+
+  /* Slide 7: "Sem Claude bude ukládat" note pod složkou — méně odsazení */
+  .finder-body > div[style*="margin-left: 36px"] {
+    margin-left: 14px !important;
+    font-size: 13px !important;
+    padding-top: 10px !important;
+  }
+
+  /* Slide 18: ping-pong wrap container má gap 40px — moc na mobilu */
+  .slide div[style*="gap: 40px"][style*="flex-wrap: wrap"] {
+    gap: 14px !important;
+    margin-top: 12px !important;
+  }
+
+  /* H3 v two-col mají inline font-size 22-24px — na mobilu menší */
+  .two-col h3[style*="font-size"] {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+  }
+  .two-col p[style*="font-size"] {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+
+  /* Karta s max-width 440px na recap slidu — full width */
+  .card[style*="max-width: 440px"] {
+    max-width: 100% !important;
+  }
+
+  /* Cowork header — zalamuj, aby chip "● Připojeno" nepřesahoval */
+  .cowork-header { flex-wrap: wrap; row-gap: 6px; }
+  .cowork-header .chip[style*="margin-left:auto"] {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* MD header chip s margin-left:auto — držet vpravo, ale neulétávat */
+  .md-header .chip[style*="margin-left:auto"] {
+    font-size: 10.5px !important;
+    padding: 3px 9px !important;
+  }
+
+  /* Versions stack: recap label na mobilu vlevo, ne v floating layoutu */
+  .recap-label { font-size: 12.5px !important; margin-bottom: 6px; }
+
+  /* Title display chip row — víc breathing room */
+  .title-display + p.slide-subtitle + div[style*="margin-top: 56px"] {
+    margin-top: 30px !important;
+    gap: 8px !important;
+  }
+
+  /* Final slide chip row */
+  .final + div, .final ~ div[style*="margin-top: 40px"] {
+    margin-top: 24px !important;
+  }
+
+  /* Compose row arrow na mobilu trochu menší */
+  .compose-row .arrow { font-size: 16px !important; }
+
+  /* MD body — pre/code wrapping na úzké displeji */
+  .md-body { word-break: break-word; overflow-wrap: anywhere; }
+
+  /* TV screen na mobilu kompaktnější */
+  .tv-screen { min-height: 140px; }
+
+  /* Person v ping-pong: výraznější horizontální centrování  */
+  .pingpong .person { width: 100%; }
+}
+
   /* Nav arrows: small + bottom-corners, with safe area */
   .nav-arrow {
     width: 44px;
@@ -1663,14 +1774,37 @@ h2.slide-title .spec-accent { color: var(--spec); font-style: italic; font-weigh
       pomocí <span style="color: var(--orange);">MD souborů</span> v Claude Coworku.
     </p>
     <div style="margin-top: 56px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-      <span class="chip">27 kapitol</span>
+      <span class="chip">28 kapitol</span>
       <span class="chip">Příklad: aplikace Sourcecheck</span>
       <span class="chip orange">Začínáme</span>
     </div>
   </div>
 </section>
 
-<!-- ========== SLIDE 2: PROČ TO DĚLÁME ========== -->
+<!-- ========== SLIDE 2: ÚVOD OD AUTORA ========== -->
+<section class="slide" data-slide="2-intro">
+  <div class="content">
+    <div class="eyebrow">Pár slov na úvod</div>
+    <h2 class="slide-title">Proč jsem to <em>sepsal</em></h2>
+    <div class="author-note">
+      <p>
+        Najdeš tu jednoduchý manuál, jak začít pracovat s <strong>MD soubory přímo ve svém počítači</strong>.
+        Spoustě lidem to extrémně zefektivnilo práci — tak jsem to chtěl předat dál.
+      </p>
+      <p>
+        Strukturu <strong>schválně držím velmi jednoduchou</strong>, aby tě to na začátku nezahltilo.
+        Hodí se hlavně pro <strong>menší osobní projekty</strong>.
+      </p>
+      <p>
+        Důležité je <em>začít přemýšlet nad daty</em> — aby byla strukturovaná a dalo se s nimi do budoucna pohodlně pracovat.
+        Zaznamenávej si nápady a know-how. <strong>Bude se ti to hodit.</strong>
+      </p>
+    </div>
+    <div class="author-signature">— Dalibor Mráz</div>
+  </div>
+</section>
+
+<!-- ========== SLIDE 3: PROČ TO DĚLÁME ========== -->
 <section class="slide" data-slide="2">
   <div class="content">
     <div class="eyebrow">Proč</div>
